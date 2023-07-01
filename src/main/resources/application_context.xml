@@ -9,7 +9,10 @@
 
     <context:property-placeholder location="classpath:music_player.properties"/>
 
-    <bean id="classicalMusicBean" class="ClassicalMusic">
+    <bean id="classicalMusicBean" class="ClassicalMusic"
+          init-method="doInit"
+          destroy-method="doDestroy"
+          factory-method="getClassicalMusic">
     </bean>
 
     <bean id="rockMusicBean" class="RockMusic">
